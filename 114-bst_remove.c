@@ -57,7 +57,7 @@ bst_t *bst_delete(bst_t *root, bst_t *node)
 
 	/* Two children */
 	successor = inorder_successor(node->right);
-	node->data = successor->data;
+	node->n = successor->n;
 
 	return (bst_delete(root, successor));
 }
@@ -74,9 +74,9 @@ bst_t *bst_remove_recursive(bst_t *root, bst_t *node, int value)
 {
 	if (node != NULL)
 	{
-		if (node->data == value)
+		if (node->n == value)
 			return (bst_delete(root, node));
-		if (node->data > value)
+		if (node->n > value)
 			return (bst_remove_recursive(root, node->left, value));
 		return (bst_remove_recursive(root, node->right, value));
 	}

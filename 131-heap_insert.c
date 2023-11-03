@@ -61,7 +61,7 @@ void swap(heap_t **arg_node, heap_t **arg_child)
 	int left_right;
 
 	node = *arg_node, child = *arg_child;
-	if (child->n > node->n)
+	if (child->data > node->data)
 	{
 		if (child->left)
 			child->left->parent = node;

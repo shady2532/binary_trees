@@ -39,7 +39,7 @@ int successor(bst_t *node)
 		left = successor(node->left);
 		if (left == 0)
 		{
-			return (node->n);
+			return (node->data);
 		}
 		return (left);
 	}
@@ -87,7 +87,7 @@ int remove_type(bst_t *root)
 	else
 	{
 		new_value = successor(root->right);
-		root->n = new_value;
+		root->data = new_value;
 		return (new_value);
 	}
 }
@@ -103,11 +103,11 @@ bst_t *bst_remove(bst_t *root, int value)
 
 	if (root == NULL)
 		return (NULL);
-	if (value < root->n)
+	if (value < root->data)
 		bst_remove(root->left, value);
-	else if (value > root->n)
+	else if (value > root->data)
 		bst_remove(root->right, value);
-	else if (value == root->n)
+	else if (value == root->data)
 	{
 		type = remove_type(root);
 		if (type != 0)

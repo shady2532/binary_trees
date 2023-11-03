@@ -13,10 +13,10 @@ int is_bst_helper(const binary_tree_t *tree, int lo, int hi)
 {
 	if (tree != NULL)
 	{
-		if (tree->n < lo || tree->n > hi)
+		if (tree->data < lo || tree->data > hi)
 			return (0);
-		return (is_bst_helper(tree->left, lo, tree->n - 1) &&
-			is_bst_helper(tree->right, tree->n + 1, hi));
+		return (is_bst_helper(tree->left, lo, tree->data - 1) &&
+			is_bst_helper(tree->right, tree->data + 1, hi));
 	}
 	return (1);
 }

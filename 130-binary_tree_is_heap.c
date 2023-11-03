@@ -64,7 +64,7 @@ int check_parent(const binary_tree_t *tree)
 	if (tree == NULL)
 		return (1);
 
-	if (tree->n > tree->parent->n)
+	if (tree->data > tree->parent->data)
 		return (0);
 
 	return (check_parent(tree->left) && check_parent(tree->right));
